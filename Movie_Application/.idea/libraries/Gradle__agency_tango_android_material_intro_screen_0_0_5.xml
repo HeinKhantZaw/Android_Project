@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: agency.tango.android:material-intro-screen-0.0.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-material-intro-screen-0.0.5.aar/64c24cdff9e7547ecabde75b4c3c1b3c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-material-intro-screen-0.0.5.aar/64c24cdff9e7547ecabde75b4c3c1b3c/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/agency.tango.android/material-intro-screen/0.0.5/5815bbacbf893016ee199891bfc7b847adc6fbdf/material-intro-screen-0.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
