@@ -32,7 +32,7 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
     @Override
     public void onBindViewHolder(@NonNull itemHolder holder, int position) {
     holder.tvTitle.setText(resultsItemArrayList.get(position).getTitle());
-    Glide.with(context).load("https://image.tmdb.org/t/p/w500/"+resultsItemArrayList.get(position).getPosterPath()).into(holder.img);
+    Glide.with(context).load("https://image.tmdb.org/t/p/w500"+resultsItemArrayList.get(position).getPosterPath()).into(holder.img);
     }
 
     @Override
@@ -42,13 +42,19 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
 
     public class itemHolder extends RecyclerView.ViewHolder {
 
-        ImageView img;
-        TextView tvTitle;
+        public ImageView img;
+        public TextView tvTitle;
         public itemHolder(@NonNull View itemView)
         {
             super(itemView);
             img=itemView.findViewById(R.id.imageView);
             tvTitle=itemView.findViewById(R.id.titleView);
         }
+    }
+    public void setData(ArrayList<ResultsItem> data)
+    {
+        resultsItemArrayList.clear();
+        resultsItemArrayList.addAll(data);
+        notifyDataSetChanged();
     }
 }

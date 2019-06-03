@@ -1,6 +1,9 @@
 package com.heinkhantzaw.tn.movie_application;
 
 import androidx.appcompat.app.AppCompatActivity;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,18 +12,46 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.github.ybq.android.spinkit.SpinKitView;
+import com.heinkhantzaw.tn.movie_application.adapter.DiscreteAdapter;
+import com.heinkhantzaw.tn.movie_application.model.MovieList;
+import com.heinkhantzaw.tn.movie_application.model.ResultsItem;
+import com.heinkhantzaw.tn.movie_application.rest.API_Client;
+import com.heinkhantzaw.tn.movie_application.rest.Rest;
+import com.yarolegovich.discretescrollview.DSVOrientation;
 import com.yarolegovich.discretescrollview.DiscreteScrollView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 SpinKitView loading;
 DiscreteScrollView dis;
+DiscreteAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showIntroOnce();
+        adapter=new DiscreteAdapter(new ArrayList<ResultsItem>(),this);
         loading=findViewById(R.id.spin_kit);
         dis=findViewById(R.id.picker);
+        dis.setAdapter(adapter);
+        dis.setOrientation(DSVOrientation.HORIZONTAL);
+        dis.setOffscreenItems(3);
+        dis.setSlideOnFling(true);
+        dis.setOverScrollEnabled(true);
+        showLoadingView();
+        Rest.getRetrofit().create(API_Client.class).getLatestMovie().enqueue(new Callback<MovieList>() {
+            @Override
+            public void onResponse(Call<MovieList> call, Response<MovieList> response) {
+                adapter.setData((ArrayList<ResultsItem>)response.body().getResults());
+                showNormalView();
+            }
+
+            @Override
+            public void onFailure(Call<MovieList> call, Throwable t) {
+            call.cancel();
+            }
+        });
     }
 
 

@@ -8,7 +8,7 @@ import retrofit2.http.GET;
 
 public interface API_Client
 {
-    String apiKey="/v4yVTbbl8dE1UP2dWu5CLyaXOku.jpg";
+    String apiKey="b64b30ff8a183dbfd580ecfb0021d7cd";
     @GET("popular?api_key="+apiKey+"&language=en-US&page=1")
     Call<MovieList> getPopularMovie();
 
