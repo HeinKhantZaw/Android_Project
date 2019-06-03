@@ -1,6 +1,5 @@
 package com.heinkhantzaw.tn.movie_application.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHolder>
 {
-    public DiscreteAdapter(ArrayList<ResultsItem> resultsItemArrayList,Context context) {
+    public DiscreteAdapter(ArrayList<ResultsItem> resultsItemArrayList) {
         this.resultsItemArrayList = resultsItemArrayList;
-        this.context=context;
     }
-    Context context;
     ArrayList<ResultsItem> resultsItemArrayList;
     @NonNull
     @Override
@@ -32,7 +29,7 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
     @Override
     public void onBindViewHolder(@NonNull itemHolder holder, int position) {
     holder.tvTitle.setText(resultsItemArrayList.get(position).getTitle());
-    Glide.with(context).load("https://image.tmdb.org/t/p/w500"+resultsItemArrayList.get(position).getPosterPath()).into(holder.img);
+    Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w200"+resultsItemArrayList.get(position).getPosterPath()).into(holder.img);
     }
 
     @Override

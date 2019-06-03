@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Movie_Application</string>
+    <string name="popularMovie">Popular Movies</string>
+    <string name="Rating">Rating : </string>
+    <string name="Title">Title : </string>
+    <string name="release">Release Date :</string>
 </resources>

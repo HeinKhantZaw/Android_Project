@@ -1,6 +1,8 @@
 package com.heinkhantzaw.tn.movie_application;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -13,6 +15,7 @@ import android.view.View;
 
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.heinkhantzaw.tn.movie_application.adapter.DiscreteAdapter;
+import com.heinkhantzaw.tn.movie_application.adapter.RecyclerAdapter;
 import com.heinkhantzaw.tn.movie_application.model.MovieList;
 import com.heinkhantzaw.tn.movie_application.model.ResultsItem;
 import com.heinkhantzaw.tn.movie_application.rest.API_Client;
@@ -25,14 +28,32 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 SpinKitView loading;
 DiscreteScrollView dis;
-DiscreteAdapter adapter;
+RecyclerAdapter adapter;
+RecyclerView rec;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showIntroOnce();
-        adapter=new DiscreteAdapter(new ArrayList<ResultsItem>(),this);
         loading=findViewById(R.id.spin_kit);
+        adapter=new RecyclerAdapter(new ArrayList<ResultsItem>());
+        rec=findViewById(R.id.PopRecView);
+        rec.setAdapter(adapter);
+        rec.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
+        showLoadingView();
+        Rest.getRetrofit().create(API_Client.class).getPopularMovie().enqueue(new Callback<MovieList>() {
+            @Override
+            public void onResponse(Call<MovieList> call, Response<MovieList> response) {
+                adapter.setData((ArrayList<ResultsItem>)response.body().getResults());
+                showNormalView();
+            }
+
+            @Override
+            public void onFailure(Call<MovieList> call, Throwable t) {
+                call.cancel();
+            }
+        });
+        /*adapter=new DiscreteAdapter(new ArrayList<ResultsItem>());
         dis=findViewById(R.id.picker);
         dis.setAdapter(adapter);
         dis.setOrientation(DSVOrientation.HORIZONTAL);
@@ -51,19 +72,20 @@ DiscreteAdapter adapter;
             public void onFailure(Call<MovieList> call, Throwable t) {
             call.cancel();
             }
-        });
+        });*/
+
     }
 
 
     private void showLoadingView()
     {
         loading.setVisibility(View.VISIBLE);
-        dis.setVisibility(View.GONE);
+        rec.setVisibility(View.GONE);
     }
     private void showNormalView()
     {
         loading.setVisibility(View.GONE);
-        dis.setVisibility(View.VISIBLE);
+        rec.setVisibility(View.VISIBLE);
     }
 
     public void showIntroOnce() {
