@@ -28,6 +28,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 SpinKitView loading;
 DiscreteScrollView dis;
+DiscreteAdapter discreteAdapter;
 RecyclerAdapter adapter;
 RecyclerView rec;
     @Override
@@ -53,7 +54,7 @@ RecyclerView rec;
                 call.cancel();
             }
         });
-        /*adapter=new DiscreteAdapter(new ArrayList<ResultsItem>());
+        discreteAdapter=new DiscreteAdapter(new ArrayList<ResultsItem>());
         dis=findViewById(R.id.picker);
         dis.setAdapter(adapter);
         dis.setOrientation(DSVOrientation.HORIZONTAL);
@@ -61,10 +62,10 @@ RecyclerView rec;
         dis.setSlideOnFling(true);
         dis.setOverScrollEnabled(true);
         showLoadingView();
-        Rest.getRetrofit().create(API_Client.class).getLatestMovie().enqueue(new Callback<MovieList>() {
+        Rest.getRetrofit().create(API_Client.class).getNowPlayingMovie().enqueue(new Callback<MovieList>() {
             @Override
             public void onResponse(Call<MovieList> call, Response<MovieList> response) {
-                adapter.setData((ArrayList<ResultsItem>)response.body().getResults());
+                discreteAdapter.setData((ArrayList<ResultsItem>)response.body().getResults());
                 showNormalView();
             }
 
@@ -72,7 +73,7 @@ RecyclerView rec;
             public void onFailure(Call<MovieList> call, Throwable t) {
             call.cancel();
             }
-        });*/
+        });
 
     }
 

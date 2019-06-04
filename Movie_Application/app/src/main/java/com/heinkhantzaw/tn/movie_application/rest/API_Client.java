@@ -15,7 +15,7 @@ public interface API_Client
     @GET("upcoming?api_key="+apiKey+"&language=en-US&page=1")
     Call <MovieList> getUpcomingMovie();
 
-    @GET("atest?api_key="+apiKey+"&language=en-US")
-    Call <MovieList> getLatestMovie();
+    @GET("now_playing?api_key="+apiKey+"&language=en-US")
+    Call <MovieList> getNowPlayingMovie();
 
 }

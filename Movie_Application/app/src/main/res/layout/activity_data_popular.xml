@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="4dp"
+    android:layout_height="200dp"
     android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="8dp"
+    android:padding="4dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -34,12 +34,15 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        app:cardCornerRadius="4dp"
         android:layout_margin="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="4dp"
         app:cardElevation="2dp"
-        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="titleName"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -77,6 +80,7 @@
                 android:text="Stars"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
