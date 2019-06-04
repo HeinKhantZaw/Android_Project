@@ -29,7 +29,7 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
     @Override
     public void onBindViewHolder(@NonNull itemHolder holder, int position) {
     holder.tvTitle.setText(resultsItemArrayList.get(position).getTitle());
-    Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w300"+resultsItemArrayList.get(position).getPosterPath()).into(holder.img);
+    Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500"+resultsItemArrayList.get(position).getPosterPath()).into(holder.img);
     }
 
     @Override

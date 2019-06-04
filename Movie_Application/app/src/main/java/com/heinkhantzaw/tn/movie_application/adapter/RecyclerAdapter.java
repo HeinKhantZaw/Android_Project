@@ -35,7 +35,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MovieV
     holder.tvTitle.setText(list.get(position).getOriginalTitle());
     holder.tvRating.setText(String.valueOf(list.get(position).getVoteAverage()));
     holder.tvRelease.setText(list.get(position).getReleaseDate());
-        Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w200"+list.get(position).getPosterPath()).into(holder.imgPoster);
+        Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500"+list.get(position).getPosterPath()).into(holder.imgPoster);
     }
 
     @Override

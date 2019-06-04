@@ -31,6 +31,7 @@ DiscreteScrollView dis;
 DiscreteAdapter discreteAdapter;
 RecyclerAdapter adapter;
 RecyclerView rec;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +57,7 @@ RecyclerView rec;
         });
         discreteAdapter=new DiscreteAdapter(new ArrayList<ResultsItem>());
         dis=findViewById(R.id.picker);
-        dis.setAdapter(adapter);
+        dis.setAdapter(discreteAdapter);
         dis.setOrientation(DSVOrientation.HORIZONTAL);
         dis.setOffscreenItems(3);
         dis.setSlideOnFling(true);

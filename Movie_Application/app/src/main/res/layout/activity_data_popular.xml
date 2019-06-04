@@ -33,7 +33,7 @@
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
@@ -62,6 +62,7 @@
                 android:id="@+id/titleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLength="20"
                 android:text="titleName"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />
