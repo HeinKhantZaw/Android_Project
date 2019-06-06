@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.heinkhantzaw.tn.movie_application.adapter.DiscreteAdapter;
@@ -25,12 +26,13 @@ import com.yarolegovich.discretescrollview.DiscreteScrollView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-SpinKitView loading;
-DiscreteScrollView dis;
-DiscreteAdapter discreteAdapter;
-RecyclerAdapter adapter;
-RecyclerView rec;
+public class MainActivity extends AppCompatActivity implements  MainInterface{
+public SpinKitView loading;
+public DiscreteScrollView dis;
+public DiscreteAdapter discreteAdapter;
+public RecyclerAdapter adapter;
+public RecyclerView rec;
+public TextView txtPlaying,txtPopular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ RecyclerView rec;
         setContentView(R.layout.activity_main);
         showIntroOnce();
         loading=findViewById(R.id.spin_kit);
+        txtPlaying=findViewById(R.id.nowPlaying);
+        txtPopular=findViewById(R.id.Popular);
         adapter=new RecyclerAdapter(new ArrayList<ResultsItem>());
         rec=findViewById(R.id.PopRecView);
         rec.setAdapter(adapter);
@@ -79,12 +83,12 @@ RecyclerView rec;
     }
 
 
-    private void showLoadingView()
+    public void showLoadingView()
     {
         loading.setVisibility(View.VISIBLE);
         rec.setVisibility(View.GONE);
     }
-    private void showNormalView()
+     public void showNormalView()
     {
         loading.setVisibility(View.GONE);
         rec.setVisibility(View.VISIBLE);
