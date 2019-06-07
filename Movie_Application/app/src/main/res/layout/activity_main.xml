@@ -9,15 +9,17 @@
     <TextView
         android:id="@+id/nowPlaying"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="29dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
         android:text="@string/NowPlaying"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <com.yarolegovich.discretescrollview.DiscreteScrollView
         android:id="@+id/picker"
@@ -71,4 +73,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/picker" />
 
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.quinny898.library.persistentsearch.sample.MainActivity">
+
+        <androidx.appcompat.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#212121" />
+
+        <com.quinny898.library.persistentsearch.SearchBox
+            android:id="@+id/searchbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-6dp"
+            android:layout_marginTop="-6dp"
+            android:layout_marginRight="-6dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

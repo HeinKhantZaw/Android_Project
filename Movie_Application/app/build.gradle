@@ -34,7 +34,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     implementation 'com.squareup.okhttp3:okhttp:3.4.1'
-    
+
     //App Intro
     implementation 'com.github.AppIntro:AppIntro:5.1.0'
 
@@ -45,7 +45,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0-alpha0mig6'
     implementation 'com.google.android.material:material:1.1.0-alpha06'
     implementation 'com.github.florent37:shapeofview:1.4.7'
-    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
 
     //loading view
     implementation 'com.github.ybq:Android-SpinKit:1.2.0'
@@ -54,9 +54,12 @@ dependencies {
     implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
 
     //Search View
-    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    implementation 'com.quinny898.library.persistentsearch:library:1.1.0-SNAPSHOT'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //Fading layout
+    implementation 'com.github.bosphere.android-fadingedgelayout:fadingedgelayout:1.0.0'
 }

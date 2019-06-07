@@ -18,6 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MovieViewHolder>
 {
     ArrayList<ResultsItem> list;
+    RecOnClickListener listener;
+
+    public void setListener(RecOnClickListener listener) {
+        this.listener = listener;
+    }
 
     public RecyclerAdapter(ArrayList<ResultsItem> list) {
         this.list = list;
@@ -31,11 +36,17 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MovieV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieViewHolder holder, final int position) {
     holder.tvTitle.setText(list.get(position).getOriginalTitle());
     holder.tvRating.setText(String.valueOf(list.get(position).getVoteAverage()));
     holder.tvRelease.setText(list.get(position).getReleaseDate());
-        Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500"+list.get(position).getPosterPath()).into(holder.imgPoster);
+        Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500/"+list.get(position).getPosterPath()).into(holder.imgPoster);
+    holder.itemView.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            listener.onItemClick(list.get(position));
+        }
+    });
     }
 
     @Override
@@ -59,5 +70,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MovieV
         list.clear();
         list.addAll(data);
         notifyDataSetChanged();
+    }
+    public  interface RecOnClickListener
+    {
+        public void onItemClick(ResultsItem item);
     }
 }

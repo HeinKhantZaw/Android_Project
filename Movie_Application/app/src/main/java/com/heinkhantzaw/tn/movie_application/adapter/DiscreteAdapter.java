@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHolder>
 {
+    DiscreteOnClickListener listener;
+
     public DiscreteAdapter(ArrayList<ResultsItem> resultsItemArrayList) {
         this.resultsItemArrayList = resultsItemArrayList;
     }
@@ -27,9 +29,17 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull itemHolder holder, int position) {
+    public void onBindViewHolder(@NonNull itemHolder holder, final int position) {
     holder.tvTitle.setText(resultsItemArrayList.get(position).getTitle());
-    Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500"+resultsItemArrayList.get(position).getPosterPath()).into(holder.img);
+    Glide.with(holder.itemView.getContext())
+            .load("https://image.tmdb.org/t/p/w500/"+resultsItemArrayList.get(position).getPosterPath())
+            .into(holder.img);
+    holder.itemView.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            listener.onItemClick(resultsItemArrayList.get(position));
+        }
+    });
     }
 
     @Override
@@ -48,10 +58,19 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
             tvTitle=itemView.findViewById(R.id.titleView);
         }
     }
+
+    public void setListener(DiscreteOnClickListener listener) {
+        this.listener = listener;
+    }
+
     public void setData(ArrayList<ResultsItem> data)
     {
         resultsItemArrayList.clear();
         resultsItemArrayList.addAll(data);
         notifyDataSetChanged();
+    }
+    public interface DiscreteOnClickListener
+    {
+        void onItemClick(ResultsItem item);
     }
 }

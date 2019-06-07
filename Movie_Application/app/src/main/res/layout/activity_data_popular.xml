@@ -11,8 +11,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
         app:cardCornerRadius="4dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
@@ -21,8 +21,9 @@
 
         <ImageView
             android:id="@+id/Popularposter"
-            android:layout_width="170dp"
-            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:scaleType="fitXY"
+            android:layout_height="150dp"
             android:elevation="8dp"
             app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="@+id/cardView"
@@ -47,7 +48,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="124dp"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -62,7 +63,6 @@
                 android:id="@+id/titleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLength="20"
                 android:text="titleName"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />

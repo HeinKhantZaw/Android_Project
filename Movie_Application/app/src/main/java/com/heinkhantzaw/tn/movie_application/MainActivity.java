@@ -19,6 +19,7 @@ import com.heinkhantzaw.tn.movie_application.adapter.DiscreteAdapter;
 import com.heinkhantzaw.tn.movie_application.adapter.RecyclerAdapter;
 import com.heinkhantzaw.tn.movie_application.model.MovieList;
 import com.heinkhantzaw.tn.movie_application.model.ResultsItem;
+import com.heinkhantzaw.tn.movie_application.model.movie_detail.MovieDetailsModel;
 import com.heinkhantzaw.tn.movie_application.rest.API_Client;
 import com.heinkhantzaw.tn.movie_application.rest.Rest;
 import com.yarolegovich.discretescrollview.DSVOrientation;
@@ -46,6 +47,14 @@ public TextView txtPlaying,txtPopular;
         rec=findViewById(R.id.PopRecView);
         rec.setAdapter(adapter);
         rec.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
+        adapter.setListener(new RecyclerAdapter.RecOnClickListener() {
+            @Override
+            public void onItemClick(ResultsItem item) {
+                Intent intent=new Intent(MainActivity.this,MovieDetail.class);
+                intent.putExtra("Data",item);
+                startActivity(intent);
+            }
+        });
         showLoadingView();
         Rest.getRetrofit().create(API_Client.class).getPopularMovie().enqueue(new Callback<MovieList>() {
             @Override
@@ -64,9 +73,17 @@ public TextView txtPlaying,txtPopular;
         dis.setAdapter(discreteAdapter);
         dis.setOrientation(DSVOrientation.HORIZONTAL);
         dis.setOffscreenItems(3);
-        dis.setSlideOnFling(true);
         dis.setOverScrollEnabled(true);
+        dis.setSlideOnFling(true);
         showLoadingView();
+        discreteAdapter.setListener(new DiscreteAdapter.DiscreteOnClickListener() {
+            @Override
+            public void onItemClick(ResultsItem item) {
+                Intent intent=new Intent(MainActivity.this,MovieDetail.class);
+                intent.putExtra("Data",item);
+                startActivity(intent);
+            }
+        } );
         Rest.getRetrofit().create(API_Client.class).getNowPlayingMovie().enqueue(new Callback<MovieList>() {
             @Override
             public void onResponse(Call<MovieList> call, Response<MovieList> response) {
@@ -81,17 +98,19 @@ public TextView txtPlaying,txtPopular;
         });
 
     }
-
-
     public void showLoadingView()
     {
         loading.setVisibility(View.VISIBLE);
         rec.setVisibility(View.GONE);
+        txtPlaying.setVisibility(View.GONE);
+        txtPopular.setVisibility(View.GONE);
     }
      public void showNormalView()
     {
         loading.setVisibility(View.GONE);
         rec.setVisibility(View.VISIBLE);
+        txtPlaying.setVisibility(View.VISIBLE) ;
+        txtPopular.setVisibility(View.VISIBLE);
     }
 
     public void showIntroOnce() {
