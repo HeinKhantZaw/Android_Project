@@ -62,4 +62,9 @@ dependencies {
 
     //Fading layout
     implementation 'com.github.bosphere.android-fadingedgelayout:fadingedgelayout:1.0.0'
+
+    //Recycler View custom
+
+    //Pull to refresh
+    implementation 'com.hlab.animatedPullToRefresh:animated-pull-to-refresh-layout:1.0.1'
 }

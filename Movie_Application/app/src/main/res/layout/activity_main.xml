@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.hlab.animatedPullToRefresh.AnimatedPullToRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefreshLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:animationSpeed="fast"
+    app:headerText="@string/loading"
+    app:headerLoopAnimIteration="1"
+    app:headerLoopAnimation="zoom"
+    app:headerTextAnimIteration="1"
+    app:headerTextAnimation="rotateCW"
+    app:headerTextColor="@color/colorPrimaryDark"
+    app:headerTextColorAnimationEnabled="true"
     tools:context=".MainActivity">
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
     <TextView
         android:id="@+id/nowPlaying"
         android:layout_width="wrap_content"
@@ -34,21 +47,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nowPlaying" />
 
-    <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/spin_kit"
-        style="@style/SpinKitView.Large.Circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:SpinKit_Color="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_scale="0.5"
+        app:lottie_fileName="loading.json"
+        app:lottie_loop="true" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/PopRecView"
@@ -99,3 +113,4 @@
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</com.hlab.animatedPullToRefresh.AnimatedPullToRefreshLayout>
