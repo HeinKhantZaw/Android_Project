@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <com.yarolegovich.discretescrollview.DiscreteScrollView
-        android:id="@+id/picker"
+        android:id="@+id/similarDiscrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -85,22 +85,22 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Popular" />
+
     <TextView
-        android:textColor="@color/cardview_light_background"
-        android:shadowColor="@color/cardview_dark_background"
-        android:shadowRadius="2"
-        android:shadowDx="1"
-        android:shadowDy="1"
         android:id="@+id/Popular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:shadowColor="@color/cardview_dark_background"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
         android:text="@string/popularMovie"
+        android:textColor="@color/cardview_light_background"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/picker" />
+        app:layout_constraintTop_toBottomOf="@+id/similarDiscrete" />
 
     <FrameLayout
         android:id="@+id/relativeLayout"

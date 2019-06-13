@@ -14,10 +14,9 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.airbnb.lottie.LottieAnimationView;
 import com.heinkhantzaw.tn.movie_application.adapter.DiscreteAdapter;
 import com.heinkhantzaw.tn.movie_application.adapter.RecyclerAdapter;
@@ -38,6 +37,8 @@ public RecyclerAdapter adapter;
 public RecyclerView rec;
 public TextView txtPlaying,txtPopular;
 public AnimatedPullToRefreshLayout refreshLayout;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +67,7 @@ public AnimatedPullToRefreshLayout refreshLayout;
         showLoadingView();
         contentPopularLoading();
         discreteAdapter=new DiscreteAdapter(new ArrayList<ResultsItem>());
-        dis=findViewById(R.id.picker);
+        dis=findViewById(R.id.similarDiscrete);
         dis.setAdapter(discreteAdapter);
         dis.setOrientation(DSVOrientation.HORIZONTAL);
         dis.setOffscreenItems(3);
