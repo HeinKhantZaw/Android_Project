@@ -59,16 +59,16 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
         }
     }
 
-    public void setListener(DiscreteOnClickListener listener) {
-        this.listener = listener;
-    }
-
     public void setData(ArrayList<ResultsItem> data)
     {
         resultsItemArrayList.clear();
         resultsItemArrayList.addAll(data);
         notifyDataSetChanged();
     }
+    public void setListener(DiscreteOnClickListener listener) {
+        this.listener = listener;
+    }
+
     public interface DiscreteOnClickListener
     {
         void onItemClick(ResultsItem item);
