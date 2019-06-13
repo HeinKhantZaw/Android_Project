@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hlab.animatedPullToRefresh:animated-pull-to-refresh-layout-1.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-animated-pull-to-refresh-layout-1.0.1.aar/31c86a92c87920d3c13b9f95d1008641/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-animated-pull-to-refresh-layout-1.0.1.aar/31c86a92c87920d3c13b9f95d1008641/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hlab.animatedPullToRefresh/animated-pull-to-refresh-layout/1.0.1/cd192820a07288f7dc681aa6fef63e757f088ba1/animated-pull-to-refresh-layout-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

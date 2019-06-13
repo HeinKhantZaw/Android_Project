@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.heinkhantzaw.tn.movie_application"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha05'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0-beta01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-beta01'
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.0.3'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    //App Intro
+    implementation 'com.github.AppIntro:AppIntro:5.1.0'
+
+    //Recycler VIew
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    //Material Design
+    implementation 'com.google.android.material:material:1.1.0-alpha0mig6'
+    implementation 'com.google.android.material:material:1.1.0-alpha06'
+    implementation 'com.github.florent37:shapeofview:1.4.7'
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
+
+    //loading view
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+
+    //Discrete Scroll View
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+
+    //Search View
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //Fading layout
+    implementation 'com.github.bosphere.android-fadingedgelayout:fadingedgelayout:1.0.0'
+
+    //Recycler View custom
+
+    //Pull to refresh
+    implementation 'com.hlab.animatedPullToRefresh:animated-pull-to-refresh-layout:1.0.1'
+}
