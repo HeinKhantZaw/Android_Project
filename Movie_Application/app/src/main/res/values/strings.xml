@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CineApp</string>
+    <string name="popularMovie">Popular Movies</string>
+    <string name="Rating">Rating : </string>
+    <string name="Title">Title : </string>
+    <string name="release">Release Date :</string>
+    <string name="NowPlaying">Now Playing</string>
+    <string name="loading">L O A D I N G</string>
+</resources>
