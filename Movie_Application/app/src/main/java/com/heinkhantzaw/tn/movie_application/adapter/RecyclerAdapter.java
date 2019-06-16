@@ -73,6 +73,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MovieV
     }
     public  interface RecOnClickListener
     {
-        public void onItemClick(ResultsItem item);
+         void onItemClick(ResultsItem item);
     }
 }

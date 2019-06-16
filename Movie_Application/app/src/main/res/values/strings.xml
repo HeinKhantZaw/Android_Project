@@ -6,4 +6,6 @@
     <string name="release">Release Date :</string>
     <string name="NowPlaying">Now Playing</string>
     <string name="loading">L O A D I N G</string>
+    <string name="starting_date">Starting Date : </string>
+    <string name="trending_tv_shows">Trending TV Shows</string>
 </resources>

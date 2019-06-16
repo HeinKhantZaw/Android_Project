@@ -63,7 +63,8 @@ dependencies {
     //Fading layout
     implementation 'com.github.bosphere.android-fadingedgelayout:fadingedgelayout:1.0.0'
 
-    //Recycler View custom
+    //Video Player
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3'
 
     //Pull to refresh
     implementation 'com.hlab.animatedPullToRefresh:animated-pull-to-refresh-layout:1.0.1'

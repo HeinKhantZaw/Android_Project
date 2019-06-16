@@ -6,7 +6,8 @@
     android:layout_height="200dp"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
-    android:padding="4dp">
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -31,7 +32,8 @@
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/foreground"
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,20 +59,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Title"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/whiteColor"/>
 
             <TextView
                 android:id="@+id/titleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="titleName"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/whiteColor"
                 android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:textColor="@color/whiteColor"
                 android:text="@string/Rating"
                 android:textStyle="bold" />
 
@@ -79,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Stars"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/whiteColor"
                 android:textSize="18sp" />
 
             <TextView
@@ -87,6 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="@string/release"
+                android:textColor="@color/whiteColor"
                 android:textStyle="bold" />
 
             <TextView
@@ -94,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Date"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/whiteColor"
                 android:textSize="18sp" />
 
         </LinearLayout>

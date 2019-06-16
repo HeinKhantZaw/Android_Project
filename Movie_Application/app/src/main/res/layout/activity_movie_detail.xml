@@ -3,46 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:background="@color/EndColor"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MovieDetail">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtSimilar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Similar Movies"
-        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
+        android:textColor="@color/whiteColor"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/overView" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView5"
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/PlayButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        app:cardCornerRadius="16dp"
-        app:contentPadding="4dp"
-        app:cardElevation="8dp"
-        app:layout_constraintStart_toEndOf="@+id/releaseDateNum"
-        app:layout_constraintTop_toBottomOf="@+id/MovieTitle">
-
-        <TextView
-            android:id="@+id/runTime"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="106 mins" />
-    </androidx.cardview.widget.CardView>
+        android:layout_marginTop="8dp"
+        app:lottie_scale="0.2"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cView"
+        app:layout_constraintEnd_toEndOf="@+id/cView"
+        app:layout_constraintStart_toStartOf="@+id/cView"
+        app:layout_constraintTop_toTopOf="@+id/cView"
+        app:lottie_fileName="play.json" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/PlayLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:lottie_scale="0.1"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:elevation="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cView"
+        app:layout_constraintEnd_toEndOf="@+id/cView"
+        app:layout_constraintStart_toStartOf="@+id/cView"
+        app:layout_constraintTop_toTopOf="@+id/cView"
+        app:lottie_fileName="play_loading.json" />
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,7 +60,7 @@
         app:cardElevation="8dp"
         android:id="@+id/cView"
         app:cardCornerRadius="40dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -92,6 +102,7 @@
         android:layout_marginTop="16dp"
         android:text="Title"
         android:textSize="18sp"
+        android:textColor="@color/whiteColor"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/RatingTv"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
@@ -100,6 +111,7 @@
         android:id="@+id/overView"
         android:layout_width="358dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/whiteColor"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
@@ -110,6 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cView" />
 
     <TextView
+        android:textColor="@color/whiteColor"
         android:id="@+id/RatingTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -123,6 +136,7 @@
         android:id="@+id/releaseDateNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/whiteColor"
         android:layout_marginTop="8dp"
         android:text="Release Date :"
         app:layout_constraintStart_toStartOf="@+id/RatingTv"
@@ -133,6 +147,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:textColor="@color/whiteColor"
         android:layout_marginTop="8dp"
         android:text="7.2"
         app:layout_constraintStart_toEndOf="@+id/RatingTv"
@@ -144,6 +159,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textColor="@color/whiteColor"
         android:text="2019.2.19"
         app:layout_constraintStart_toEndOf="@+id/releaseDateNum"
         app:layout_constraintTop_toBottomOf="@+id/RatingTv" />
@@ -158,6 +174,6 @@
         app:dsv_orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSimilar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

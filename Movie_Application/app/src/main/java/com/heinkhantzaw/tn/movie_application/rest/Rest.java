@@ -16,7 +16,7 @@ public class Rest
                 .addInterceptor(interceptor)
                 .build();
         retrofit=new Retrofit.Builder()
-                .baseUrl("https://api.themoviedb.org/3/movie/")
+                .baseUrl("https://api.themoviedb.org/3/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
