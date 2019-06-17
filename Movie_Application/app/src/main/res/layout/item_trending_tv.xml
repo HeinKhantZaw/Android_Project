@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingRight="4dp"
     android:paddingLeft="4dp"
+    android:paddingBottom="4dp"
     android:orientation="vertical" android:layout_width="200dp"
     android:layout_height="wrap_content">
 
@@ -52,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/open_sans_semibold"
                 android:text="Title"
                 android:textColor="@color/whiteColor"
                 android:textSize="18sp" />
@@ -65,15 +67,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
                     android:text="@string/starting_date"
-                    android:textColor="@color/whiteColor"/>
+                    android:textColor="@color/whiteColor" />
 
                 <TextView
                     android:id="@+id/TV_startDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
                     android:text=" (2019-2-10)"
-                    android:textColor="@color/whiteColor"/>
+                    android:textColor="@color/whiteColor" />
             </LinearLayout>
 
             <LinearLayout
@@ -84,17 +88,19 @@
                 >
 
                 <TextView
-                    android:textColor="@color/whiteColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Rating" />
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="@string/Rating"
+                    android:textColor="@color/whiteColor" />
 
                 <TextView
                     android:id="@+id/TV_rating"
-                    android:textColor="@color/whiteColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="7.9" />
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="7.9"
+                    android:textColor="@color/whiteColor" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

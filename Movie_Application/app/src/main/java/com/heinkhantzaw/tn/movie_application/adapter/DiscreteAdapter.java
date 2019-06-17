@@ -1,5 +1,6 @@
 package com.heinkhantzaw.tn.movie_application.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHolder>
 {
+    double rate;
     DiscreteOnClickListener listener;
 
     public DiscreteAdapter(ArrayList<ResultsItem> resultsItemArrayList) {
@@ -31,6 +33,21 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
     @Override
     public void onBindViewHolder(@NonNull itemHolder holder, final int position) {
     holder.tvTitle.setText(resultsItemArrayList.get(position).getTitle());
+    holder.tvRating.setText(String.valueOf(resultsItemArrayList.get(position).getVoteAverage()));
+    rate=resultsItemArrayList.get(position).getVoteAverage();
+    if(rate>=7.0)
+    {
+        holder.tvRating.setTextColor(Color.parseColor("#57E32C"));
+    }
+    else if (rate>=4.0)
+    {
+        holder.tvRating.setTextColor(Color.parseColor("#FFE234"));
+    }
+    else
+    {
+        holder.tvRating.setTextColor(Color.parseColor("#FF4545"));
+    }
+
     Glide.with(holder.itemView.getContext())
             .load("https://image.tmdb.org/t/p/w500/"+resultsItemArrayList.get(position).getPosterPath())
             .into(holder.img);
@@ -49,13 +66,14 @@ public class DiscreteAdapter extends RecyclerView.Adapter<DiscreteAdapter.itemHo
 
     public class itemHolder extends RecyclerView.ViewHolder {
 
-        public ImageView img;
-        public TextView tvTitle;
-        public itemHolder(@NonNull View itemView)
+        ImageView img;
+        TextView tvTitle,tvRating;
+        itemHolder(@NonNull View itemView)
         {
             super(itemView);
             img=itemView.findViewById(R.id.imageView);
             tvTitle=itemView.findViewById(R.id.titleView);
+            tvRating=itemView.findViewById(R.id.ratingMovie);
         }
     }
 

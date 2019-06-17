@@ -5,21 +5,36 @@
     android:layout_width="match_parent"
     android:background="@color/EndColor"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MovieDetail">
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/detailLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/overView"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading.json"
+            app:lottie_loop="true"
+            app:lottie_scale="0.2" />
     <TextView
         android:id="@+id/txtSimilar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_semibold"
         android:text="Similar Movies"
-        android:textSize="18sp"
         android:textColor="@color/whiteColor"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/overView"
         app:layout_constraintTop_toBottomOf="@+id/overView" />
 
 
@@ -59,7 +74,7 @@
         android:elevation="8dp"
         app:cardElevation="8dp"
         android:id="@+id/cView"
-        app:cardCornerRadius="40dp"
+        app:cardCornerRadius="8dp"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
@@ -97,38 +112,44 @@
 
     <TextView
         android:id="@+id/MovieTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/open_sans_extrabold"
         android:text="Title"
-        android:textSize="18sp"
         android:textColor="@color/whiteColor"
+        android:textSize="18sp"
         android:textStyle="bold"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/RatingTv"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/overView"
-        android:layout_width="358dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/whiteColor"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/open_sans_regular"
         android:text="A Pedro Almodovar production in which a fatally ill mother with only two months to live creates a list of things she wants to do before she dies with out telling her family of her illness."
+        android:textColor="@color/whiteColor"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cView" />
+        app:layout_constraintTop_toBottomOf="@+id/releaseDateNum" />
 
     <TextView
-        android:textColor="@color/whiteColor"
         android:id="@+id/RatingTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_semibold"
         android:text="Rating : "
+        android:textColor="@color/whiteColor"
         app:layout_constraintStart_toEndOf="@+id/cView"
         app:layout_constraintTop_toBottomOf="@+id/MovieTitle" />
 
@@ -136,9 +157,10 @@
         android:id="@+id/releaseDateNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/whiteColor"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_semibold"
         android:text="Release Date :"
+        android:textColor="@color/whiteColor"
         app:layout_constraintStart_toStartOf="@+id/RatingTv"
         app:layout_constraintTop_toBottomOf="@+id/RatingTv" />
 
@@ -146,21 +168,32 @@
         android:id="@+id/RatingNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/whiteColor"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_semibold"
         android:text="7.2"
-        app:layout_constraintStart_toEndOf="@+id/RatingTv"
+        android:textColor="@color/whiteColor"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/MovieTitle" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/star"
+        app:layout_constraintStart_toEndOf="@+id/RatingTv"
+        app:layout_constraintTop_toTopOf="@+id/RatingNum" />
     <TextView
         android:id="@+id/Release"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:textColor="@color/whiteColor"
+        android:fontFamily="@font/open_sans_semibold"
         android:text="2019.2.19"
+        android:textColor="@color/whiteColor"
         app:layout_constraintStart_toEndOf="@+id/releaseDateNum"
         app:layout_constraintTop_toBottomOf="@+id/RatingTv" />
 
@@ -169,9 +202,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:dsv_orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSimilar" />

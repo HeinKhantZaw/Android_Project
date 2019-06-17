@@ -1,6 +1,5 @@
 package com.heinkhantzaw.tn.movie_application.adapter;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,20 +11,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.heinkhantzaw.tn.movie_application.R;
-import com.heinkhantzaw.tn.movie_application.model.ResultsItem;
+import com.heinkhantzaw.tn.movie_application.model.tv_model.Result_TrendingTV;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecTV_Adapter extends RecyclerView.Adapter<RecTV_Adapter.TV_ViewHolder>
 {
-    ArrayList<ResultsItem> list;
+    ArrayList<Result_TrendingTV> list;
     RecOnClickListener listener;
 
     public void setListener(RecOnClickListener listener) {
         this.listener = listener;
     }
 
-    public RecTV_Adapter(ArrayList<ResultsItem> list) {
+    public RecTV_Adapter(ArrayList<Result_TrendingTV> list) {
         this.list = list;
     }
 
@@ -38,9 +38,9 @@ public class RecTV_Adapter extends RecyclerView.Adapter<RecTV_Adapter.TV_ViewHol
 
     @Override
     public void onBindViewHolder(@NonNull TV_ViewHolder holder, final int position) {
-        holder.txtTitle.setText(list.get(position).getOriginalTitle());
+        holder.txtTitle.setText(list.get(position).getOriginalName());
         holder.tvRating.setText(String.valueOf(list.get(position).getVoteAverage()));
-        holder.tvRelease.setText(list.get(position).getReleaseDate());
+        holder.tvRelease.setText(list.get(position).getFirstAirDate());
         Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500/"+list.get(position).getPosterPath()).into(holder.imgPoster);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +66,7 @@ public class RecTV_Adapter extends RecyclerView.Adapter<RecTV_Adapter.TV_ViewHol
             imgPoster=itemView.findViewById(R.id.TV_Poster );
         }
     }
-    public void setData(ArrayList<ResultsItem> data)
+    public void setData(List<Result_TrendingTV> data)
     {
         list.clear();
         list.addAll(data);
@@ -74,6 +74,6 @@ public class RecTV_Adapter extends RecyclerView.Adapter<RecTV_Adapter.TV_ViewHol
     }
     public  interface RecOnClickListener
     {
-        void onItemClick(ResultsItem item);
+        void onItemClick(Result_TrendingTV item);
     }
 }

@@ -8,4 +8,9 @@
     <color name="EndColor">#333333</color>
     <color name="loading">#777777</color>
     <color name="whiteColor">#FFFFFF</color>
+    <color name="Headers">#E67E22</color>
+    <color name="link">#33BEFF</color>
+    <color name="intro1">#557AD5</color>
+    <color name="intro2">#251B4F</color>
+    <color name="intro3">#EA5E3D</color>
 </resources>

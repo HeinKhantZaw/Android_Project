@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.hlab.animatedPullToRefresh.AnimatedPullToRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pullToRefreshLayout"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:animationSpeed="fast"
-    android:background="@color/loading"
-    app:headerText="@string/loading"
-    app:headerLoopAnimIteration="1"
-    app:headerLoopAnimation="zoom"
-    app:headerTextColor="@color/whiteColor"
-    app:headerTextAnimIteration="1"
-    app:headerTextAnimation="rotateCW"
-    app:headerTextColorAnimationEnabled="true"
-    tools:context=".MainActivity">
+    android:id="@+id/pullToRefreshLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <ScrollView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-       >
+        android:background="@color/black">
+
         <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black">
+
 
             <TextView
                 android:id="@+id/nowPlaying"
@@ -36,14 +24,14 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/roboto_bold"
                 android:gravity="center"
                 android:shadowColor="@color/dark_gray"
                 android:shadowDx="1"
                 android:shadowDy="1"
                 android:shadowRadius="2"
                 android:text="@string/NowPlaying"
-                android:textColor="@color/whiteColor"
+                android:textColor="@color/Headers"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -74,8 +62,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
-            app:lottie_scale="0.5"
-            app:lottie_fileName="loading.json"
+            app:lottie_scale="1.1"
+            app:lottie_fileName="loading_ani.json"
             app:lottie_loop="true" />
 
         <com.yarolegovich.discretescrollview.DiscreteScrollView
@@ -96,15 +84,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/roboto_bold"
                 android:shadowColor="#000000"
                 android:shadowDx="1"
                 android:shadowDy="1"
                 android:shadowRadius="2"
                 android:text="@string/popularMovie"
-                android:textColor="@color/whiteColor"
+                android:textColor="@color/Headers"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -114,10 +102,28 @@
         <FrameLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/EndColor">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+
+                <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/search_icon" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>
 
             <TextView
@@ -127,13 +133,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/roboto_bold"
                 android:shadowColor="#00000000"
                 android:shadowDx="1"
                 android:shadowDy="1"
                 android:shadowRadius="2"
                 android:text="@string/trending_tv_shows"
-                android:textColor="@color/whiteColor"
+                android:textColor="@color/Headers"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -144,11 +150,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtTVShow"
-            app:dsv_orientation="horizontal"/>
+            app:layout_constraintTop_toBottomOf="@id/txtTVShow"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-</com.hlab.animatedPullToRefresh.AnimatedPullToRefreshLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

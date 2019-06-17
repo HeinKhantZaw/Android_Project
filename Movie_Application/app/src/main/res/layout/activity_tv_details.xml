@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/EndColor"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MovieDetail">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="@string/website"
+            android:textColor="@color/whiteColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TV_detail_overView" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/TV_detail_playButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:lottie_scale="0.2"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:elevation="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cView"
+            app:layout_constraintEnd_toEndOf="@+id/cView"
+            app:layout_constraintStart_toStartOf="@+id/cView"
+            app:layout_constraintTop_toTopOf="@+id/cView"
+            app:lottie_fileName="play.json" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/TV_detail_playLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:lottie_scale="0.1"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:elevation="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cView"
+            app:layout_constraintEnd_toEndOf="@+id/cView"
+            app:layout_constraintStart_toStartOf="@+id/cView"
+            app:layout_constraintTop_toTopOf="@+id/cView"
+            app:lottie_fileName="play_loading.json" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            app:cardElevation="8dp"
+            android:id="@+id/cView"
+            app:cardCornerRadius="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            <ImageView
+                android:id="@+id/TV_detail_posterView"
+                android:layout_width="130dp"
+                android:scaleType="fitXY"
+                android:layout_height="200dp" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.bosphere.fadingedgelayout.FadingEdgeLayout
+                android:id="@+id/fadingEdgeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                app:fel_edge="bottom"
+                app:fel_size_bottom="80dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/TV_detail_backdrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.bosphere.fadingedgelayout.FadingEdgeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TV_detail_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/open_sans_extrabold"
+            android:text="Title"
+            android:textColor="@color/whiteColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/TV_detail_rating"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/TV_detail_overView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/open_sans_regular"
+            android:text="A Pedro Almodovar production in which a fatally ill mother with only two months to live creates a list of things she wants to do before she dies with out telling her family of her illness."
+            android:textColor="@color/whiteColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/First_Air_Date" />
+
+        <TextView
+            android:id="@+id/TV_detail_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="Rating : "
+            android:textColor="@color/whiteColor"
+            app:layout_constraintStart_toEndOf="@+id/cView"
+            app:layout_constraintTop_toBottomOf="@+id/TV_detail_title" />
+
+        <TextView
+            android:id="@+id/First_Air_Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="Release Date :"
+            android:textColor="@color/whiteColor"
+            app:layout_constraintStart_toStartOf="@+id/TV_detail_rating"
+            app:layout_constraintTop_toBottomOf="@+id/TV_detail_rating" />
+
+        <TextView
+            android:id="@+id/TV_rating_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="7.2"
+            android:textColor="@color/whiteColor"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/TV_detail_title" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/star"
+            app:layout_constraintStart_toEndOf="@+id/TV_detail_rating"
+            app:layout_constraintTop_toBottomOf="@+id/TV_detail_title" />
+        <TextView
+            android:id="@+id/TV_detail_firstAir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="2019.2.19"
+            android:textColor="@color/whiteColor"
+            app:layout_constraintStart_toEndOf="@+id/First_Air_Date"
+            app:layout_constraintTop_toBottomOf="@+id/TV_detail_rating" />
+
+        <TextView
+            android:id="@+id/url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/roboto_condensed_italic"
+            android:text="TextView"
+            android:textColor="@color/link"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/TV_detail_overView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
