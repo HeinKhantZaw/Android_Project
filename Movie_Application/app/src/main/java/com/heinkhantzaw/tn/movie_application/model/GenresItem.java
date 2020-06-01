@@ -24,10 +24,10 @@ public class GenresItem implements Serializable {
 
 	@Override
  	public String toString(){
-		return 
-			"GenresItem{" + 
-			"name = '" + name + '\'' + 
-			",id = '" + id + '\'' + 
+		return
+			"GenresItem{" +
+			"name = '" + name + '\'' +
+			",id = '" + id + '\'' +
 			"}";
 		}
 }

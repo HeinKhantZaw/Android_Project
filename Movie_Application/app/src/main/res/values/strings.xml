@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CineApp</string>
+    <string name="app_name">The Movie</string>
     <string name="popularMovie">Popular Movies</string>
     <string name="Rating">Rating : </string>
     <string name="Title">Title : </string>
@@ -9,4 +9,21 @@
     <string name="starting_date">Starting Date : </string>
     <string name="trending_tv_shows">Trending TV Shows</string>
     <string name="website">Website =</string>
+    <string name="dev">Developed by</string>
+    <string name="DevName">Hein Khant Zaw</string>
+    <string name="libName">List of Libraries used</string>
+    <string name="lib1">1.Lottie</string>
+    <string name="lib2">2.App Intro</string>
+    <string name="lib3">3.Recycler View</string>
+    <string name="lib4">4.Material Design</string>
+    <string name="lib5">5.Discrete Scroll View</string>
+    <string name="lib6">6.Search View</string>
+    <string name="lib7">7.Glide</string>
+    <string name="lib8">8.Fading layout</string>
+    <string name="lib9">9.Video Player</string>
+
+    <string name="upcoming_movies">Upcoming Movies</string>
+    <string name="contact_me">Contact Me</string>
+    <string name="lib10">10.Rounded Image View</string>
+    <string name="retrofit">11.Retrofit</string>
 </resources>

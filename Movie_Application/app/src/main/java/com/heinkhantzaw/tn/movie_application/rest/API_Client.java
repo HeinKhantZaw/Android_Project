@@ -5,10 +5,9 @@ import com.heinkhantzaw.tn.movie_application.model.VideoModel;
 import com.heinkhantzaw.tn.movie_application.model.tv_model.TrendingTV;
 import com.heinkhantzaw.tn.movie_application.model.tv_model.model;
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Query;
-import retrofit2.http.Url;
+    import retrofit2.Call;
+    import retrofit2.http.GET;
+    import retrofit2.http.Url;
 
 public interface API_Client
 {
@@ -22,7 +21,6 @@ public interface API_Client
 
     @GET("movie/now_playing?api_key="+apiKey+"&language=en-US")
     Call <MovieList> getNowPlayingMovie();
-
 
     @GET
     Call<MovieList> getSimilarMovie(@Url String url);

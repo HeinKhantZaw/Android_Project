@@ -106,7 +106,8 @@
             <ImageView
                 android:id="@+id/backdrop"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="200dp"
+                android:scaleType="fitXY"/>
         </com.bosphere.fadingedgelayout.FadingEdgeLayout>
     </LinearLayout>
 
@@ -172,6 +173,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans_semibold"
         android:text="7.2"
+        android:textSize="16sp"
         android:textColor="@color/whiteColor"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/MovieTitle" />

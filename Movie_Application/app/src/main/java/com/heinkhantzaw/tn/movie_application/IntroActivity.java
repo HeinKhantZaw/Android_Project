@@ -6,8 +6,6 @@ import android.os.Bundle;
 import com.github.paolorotolo.appintro.AppIntro2;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder;
-import com.github.paolorotolo.appintro.model.SliderPage;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 

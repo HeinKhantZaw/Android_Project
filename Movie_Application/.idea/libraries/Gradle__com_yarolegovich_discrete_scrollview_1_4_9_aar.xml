@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.yarolegovich:discrete-scrollview:1.4.9@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a30d7208210340dd50652ed2fe58bf68/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/02fa93a3aeea002dc0566bcbe16e8fda/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a30d7208210340dd50652ed2fe58bf68/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a30d7208210340dd50652ed2fe58bf68/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/02fa93a3aeea002dc0566bcbe16e8fda/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/02fa93a3aeea002dc0566bcbe16e8fda/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

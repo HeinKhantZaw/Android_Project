@@ -13,4 +13,6 @@
     <color name="intro1">#557AD5</color>
     <color name="intro2">#251B4F</color>
     <color name="intro3">#EA5E3D</color>
+    <color name="BorderStartColor">#8e0e00</color>
+    <color name="BorderEndColor">#1f1c18</color>
 </resources>

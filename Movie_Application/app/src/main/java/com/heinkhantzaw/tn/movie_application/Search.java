@@ -46,6 +46,15 @@ RecyclerAdapter resultAdapter;
         resultView.setLayoutManager(new LinearLayoutManager(Search.this,RecyclerView.VERTICAL,false));
         hideLoadingAnimation();
 
+        searchView.setIconified(false);
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                searchLoading.setVisibility(GONE);
+                resultView.setVisibility(GONE);
+                return true;
+            }
+        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -76,9 +85,11 @@ RecyclerAdapter resultAdapter;
     {
         searchLoading.setVisibility(GONE);
     }
+
     private void  searchingProcess()
     {
         showLoadingAnimation();
+        resultView.setVisibility(View.VISIBLE);
         resultAdapter=new RecyclerAdapter(new ArrayList<ResultsItem>());
         resultView.setAdapter(resultAdapter);
         Rest.getRetrofit()

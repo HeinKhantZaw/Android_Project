@@ -26,6 +26,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.yarolegovich.discretescrollview.DSVOrientation;
 import com.yarolegovich.discretescrollview.DiscreteScrollView;
+import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -81,7 +82,9 @@ public class MovieDetail extends AppCompatActivity {
         showLoading();
         scrollView.setAdapter(adapterMovie);
         scrollView.setOrientation(DSVOrientation.HORIZONTAL);
-        scrollView.setOffscreenItems(3);
+        scrollView.setOffscreenItems(1);
+        scrollView.setItemTransformer(new ScaleTransformer.Builder().setMinScale(0.9f).build());
+        scrollView.scrollToPosition(2);
         scrollView.setOverScrollEnabled(true);
         Rest.getRetrofit().create(API_Client.class).getSimilarMovie("movie/"+resultsItem.getId()+"/similar?api_key=b64b30ff8a183dbfd580ecfb0021d7cd&language=en-US&page=1").enqueue(new Callback<MovieList>() {
             @Override
@@ -127,6 +130,16 @@ public class MovieDetail extends AppCompatActivity {
                                         playLoading.setVisibility(View.GONE);
                                     }
                                 }).create();
+                        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                            @Override
+                            public void onDismiss(DialogInterface dialogInterface) {
+                                playButton.setVisibility(View.VISIBLE);
+                                playLoading.setVisibility(View.GONE);
+                                    if (playerView != null) {
+                                        playerView.release();
+                                }
+                            }
+                        });
                        dialog.show();
                         playerView=dialog.findViewById(R.id.youtube_player_view);
                         playerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:tools="http://schemas.android.com/tools"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/pullToRefreshLayout"
@@ -9,13 +9,38 @@
     <ScrollView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:fillViewport="true"
         android:background="@color/black">
 
         <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/black">
 
+
+            <TextView
+                android:id="@+id/Upcoming_Movies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/upcoming_movies"
+                android:textColor="@color/Headers"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Trending" />
+
+            <com.yarolegovich.discretescrollview.DiscreteScrollView
+                android:id="@+id/upcomingView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Upcoming_Movies">
+            </com.yarolegovich.discretescrollview.DiscreteScrollView>
 
             <TextView
                 android:id="@+id/nowPlaying"
@@ -112,6 +137,17 @@
 
 
                 <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="71dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon" />
+
+                <ImageView
                     android:id="@+id/search"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
@@ -123,6 +159,30 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/search_icon" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/open_sans_extrabold"
+                    android:text="The "
+                    android:textColor="@color/Headers"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/logo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_extrabold"
+                    android:text="Movie App"
+                    android:textColor="@color/Headers"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>
 
@@ -134,10 +194,6 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/roboto_bold"
-                android:shadowColor="#00000000"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:shadowRadius="2"
                 android:text="@string/trending_tv_shows"
                 android:textColor="@color/Headers"
                 android:textSize="18sp"
@@ -145,16 +201,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PopRecView" />
 
-        <com.yarolegovich.discretescrollview.DiscreteScrollView
-            android:id="@+id/Trending"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtTVShow"/>
+            <com.yarolegovich.discretescrollview.DiscreteScrollView
+                android:id="@+id/Trending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTVShow" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

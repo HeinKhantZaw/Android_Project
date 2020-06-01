@@ -3,7 +3,6 @@ package com.heinkhantzaw.tn.movie_application.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.heinkhantzaw.tn.movie_application.R;
 import com.heinkhantzaw.tn.movie_application.model.tv_model.Result_TrendingTV;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +57,7 @@ public class RecTV_Adapter extends RecyclerView.Adapter<RecTV_Adapter.TV_ViewHol
 
     public class TV_ViewHolder extends RecyclerView.ViewHolder {
         TextView txtTitle,tvRating,tvRelease;
-        ImageView imgPoster;
+        RoundedImageView imgPoster;
         public TV_ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTitle=itemView.findViewById(R.id.TV_title);
